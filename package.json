@@ -1,0 +1,16 @@
+{
+    "name": "real-time-chat",
+    "version": "1.0.0",
+    "description": "React + Node.js chat app using socket.io.",
+    "main": "app.js",
+    "repository": "https://github.com/jwesa/real-time-chat",
+    "author": "jwesa",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.18.0",
+        "nodemon": "^2.0.15"
+    },
+    "scripts": {
+        "dev": "nodemon app.js"
+    }
+}
