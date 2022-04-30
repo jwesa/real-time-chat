@@ -9,6 +9,7 @@ function Chat() {
 
     const connect = () => {
         socket.current = new WebSocket("ws://localhost:5000");
+
         socket.current.onopen = () => {
             setConnected(true);
             const message = {
@@ -18,13 +19,16 @@ function Chat() {
             };
             socket.current.send(JSON.stringify(message));
         };
+
         socket.current.onmessage = ({ data }) => {
             const message = JSON.parse(data);
             setMessages((prev) => [...prev, message]);
         };
+
         socket.current.onclose = () => {
             console.log("Connection closed.");
         };
+
         socket.current.onerror = () => {
             console.log("Error occured.");
         };
@@ -84,9 +88,7 @@ function Chat() {
                     type="text"
                     placeholder="Message"
                 />
-                <button style={{}} onClick={sendMessage}>
-                    Send Message
-                </button>
+                <button onClick={sendMessage}>Send Message</button>
             </div>
             <div>
                 {messages.map((message) => {
