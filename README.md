@@ -1,0 +1,1 @@
+React + Node.js real time chat using websocket protocol. Minimal working version.
